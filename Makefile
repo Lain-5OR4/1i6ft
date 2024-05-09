@@ -22,9 +22,6 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 TOTAL = $(OBJECTS)
-# ifdef WITH_BONUS
-# 	TOTAL += $(BOBJECTS)
-# endif
 
 ifeq ($(MAKECMDGOALS), bonus)
 	TOTAL += $(BOBJECTS)
@@ -34,6 +31,9 @@ bonus: $(NAME)
 
 $(NAME): $(TOTAL)
 	$(AR) rcs $@ $^
+
+.c.o:
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJECTS) $(BOBJECTS)
