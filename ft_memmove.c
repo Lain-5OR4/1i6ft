@@ -38,3 +38,26 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
+
+/*
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char src[] = "0987654321";
+    char dst[] = "1234567890";
+    char src1[] = "0987654321";
+    char dst2[] = "1234567890";
+    //printf("src: %s\n", src);
+    //printf("dst: %s\n", dst);
+    //ft_memmove(dst, src, 5);
+    //memmove(dst2, src1, 5);
+    //printf("dst: %s\n", dst);
+    //printf("dst2: %s\n", dst2);
+    //memmove(NULL, src1, 5); // segfault
+    // memmove(dst, NULL, 5); // segfault
+    // memmove(NULL, NULL, 5); // OK
+    printf("NULL NULL -> %p\n", memmove(NULL, NULL, 5)); // OK
+    return (0);
+}
+*/
