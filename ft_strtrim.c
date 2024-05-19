@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sebiko <sebiko@student.42tokyo.jp>         +#+  +:+       +#+        */
+/*   By: sebiko <sebiko@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 18:33:02 by sebiko            #+#    #+#             */
-/*   Updated: 2024/05/02 18:43:49 by sebiko           ###   ########.fr       */
+/*   Updated: 2024/05/18 14:27:39 by sebiko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (ft_strdup(s1 + end + 1));
 	while (ft_strchr(set, s1[end]) && end >= 0)
 		end--;
-	str = malloc(end - start + 2);
+	str = (char *)malloc(sizeof(char) * (end - start + 2));
 	if (!str)
 		return (NULL);
 	ft_strlcpy(str, &s1[start], end - start + 2);

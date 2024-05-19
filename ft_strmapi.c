@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sebiko <sebiko@student.42tokyo.jp>         +#+  +:+       +#+        */
+/*   By: sebiko <sebiko@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 19:21:37 by sebiko            #+#    #+#             */
-/*   Updated: 2024/05/05 13:02:56 by sebiko           ###   ########.fr       */
+/*   Updated: 2024/05/18 14:04:53 by sebiko           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!s || !f)
 		return (NULL);
 	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (str == NULL)
+	if (!str)
 		return (NULL);
 	while (s[i])
 	{
