@@ -23,13 +23,18 @@ all: $(NAME)
 
 TOTAL = $(OBJECTS)
 
-ifeq ($(MAKECMDGOALS), bonus)
-	TOTAL += $(BOBJECTS)
-endif
+#ifeq ($(MAKECMDGOALS), bonus)
+#	TOTAL += $(BOBJECTS)
+#endif
 
-bonus: $(NAME)
+#bonus: $(NAME)
 
-$(NAME): $(TOTAL)
+#$(NAME): $(TOTAL)
+#	$(AR) rcs $@ $^
+
+bonus: all
+
+$(NAME): $(TOTAL) $(BOBJECTS)
 	$(AR) rcs $@ $^
 
 .c.o:
